@@ -1,0 +1,33 @@
+[submodule "vim-bundler"]
+	path = vim-bundler
+	url = https://github.com/tpope/vim-bundler.git
+[submodule "vim-rvm"]
+	path = vim-rvm
+	url = https://github.com/tpope/vim-rvm.git
+[submodule "command-t"]
+	path = command-t
+	url = https://github.com/wincent/Command-T.git
+[submodule "vim-powerline"]
+	path = vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "vim-indent-guides"]
+	path = vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim-colors-solarized"]
+	path = vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "tslime"]
+	path = tslime
+	url = https://github.com/jgdavey/tslime.vim.git
+[submodule "turbux"]
+	path = turbux
+	url = https://github.com/jgdavey/vim-turbux.git
+[submodule "bundle/jasmine"]
+	path = bundle/jasmine
+	url = git://github.com/claco/jasmine.vim.git
+[submodule "jasmine-vim"]
+	path = jasmine-vim
+	url = git://github.com/claco/jasmine.vim.git
+[submodule "tabular"]
+	path = tabular
+	url = https://github.com/godlygeek/tabular.git

@@ -1,0 +1,85 @@
+" Set the tags file
+set tags=./tags;
+set tags+=./gems.tags;
+
+" Toggle the zoom completely in on the current windonw
+map <Leader>w :ZoomWin<CR>
+
+" Open up Ack
+map <Leader>a :Ack<Space>
+
+" View the latest migration
+map <Leader>m :Rmigration<Enter>
+map <Leader>d :Rschema<Enter>
+
+" Send the test to Tmux panel
+map <Leader>q <Plug>SendTestToTmux
+map <Leader>Q <Plug>SendFocusedTestToTmux
+map <Leader>F <Plug>RunCucumberSuiteInTmux
+map <Leader>S <Plug>RunSpecSuiteInTmux
+map <Leader>J <Plug>RunJasmineSuiteInTmux
+
+" These will open up the related views for the
+" controller action
+map <Leader>vv :RVview<Enter>
+map <Leader>sv :RSview<Enter>
+
+"These are nice shortcuts for opening and closing
+"tabs
+map <Leader>te :tabedit<Space>
+map <Leader>tc :tabclose<Enter>
+map <Leader>tn :tabnew<Enter>
+
+" These bindings will navigate the tag stack up
+" and down the line
+map <Leader>[ <C-]>
+map <Leader>] <C-T>
+
+" Open up NERDTree for the current directory or for the
+" gemset
+map <Leader>n :NERDTree<Enter>
+
+" Open up a gem
+map <Leader>bo :Btabedit<Space>
+
+" Set rvm using the .rvmrc in the current directory
+map <Leader>ru :Rvm use<Enter>
+
+" Open up CtrlP
+map <Leader>j :CtrlP<Enter>
+map <Leader>f :ClearCtrlPCache<Enter>
+
+" Set paste and set no paste shortcuts
+map <Leader>sp :set paste<Enter>
+map <Leader>np :set nopaste<Enter>
+
+" Toggle the line nummbers
+map <Leader>ln :set invnumber<Enter>
+
+" Move the entire line left or right
+vmap < <gv
+vmap > >gv
+
+" Use te solarized theme and the dark background
+colorscheme solarized
+set background=dark
+
+" Set the font to Menlo, with 13 point font
+set gfn=Menlo:h13
+
+" Default the shell to ZSH
+set shell=/bin/zsh
+
+" Map escape to Shift Space
+imap jk <Esc>
+
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+autocmd User Rails/app/assets/javascripts/*.js.coffee let b:rails_related = 'spec/javascripts/' . rails#buffer().name()[23:-11] . '_spec.js.coffee'
+autocmd User Rails/spec/javascripts/*_spec.js.coffee let b:rails_related = 'app/assets/javascripts/' . rails#buffer().name()[17:-16] . '.js.coffee'
+
+autocmd User Rails/app/assets/javascripts/*.js.coffee let b:rails_alternate = 'spec/javascripts/' . rails#buffer().name()[23:-11] . '_spec.js.coffee'
+autocmd User Rails/spec/javascripts/*_spec.js.coffee let b:rails_alternate = 'app/assets/javascripts/' . rails#buffer().name()[17:-16] . '.js.coffee'
+
+autocmd BufNewFile,BufRead,BufWritePost *_spec.js.coffee set filetype=jasmine.coffee syntax=jasmine

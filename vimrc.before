@@ -1,0 +1,38 @@
+" Remap the leader key to semi-colon
+let mapleader=";"
+
+" CtrlP configuration options
+" Move the ctrlp cache dir to inside .vim
+let g:ctrlp_cache_dir = $HOME.'/.vim/.cache/ctrlp'
+
+"Reverse the order of the serach results, put the matches
+"on the top
+let g:ctrlp_match_window_reversed = 0
+
+"Put the window on top
+let g:ctrlp_match_window_bottom = 1
+
+"See if this doesn't make the searching faster
+let g:ctrlp_user_command = ['.git/', 'cd %s && git ls-files']
+
+" Set the maximum number of lines of match to 15
+let g:ctrlp_max_height = 15
+
+" Jump to the open file if its on the same tab
+let g:ctrlp_jump_to_buffer = 1
+
+" Don't have CtrlP search dotfiles or dot directories
+let g:ctrlp_dotfiles = 0
+
+" Setup up tag browsing with CtrlP
+let g:ctrlp_extensions = ['tag']
+
+" Setup the ascii codes for - and _ for erb
+let g:surround_45 = "<% \r %>"
+let g:surround_95 = "<%= \r %>"
+
+let g:no_turbux_mappings = 1
+
+let g:turbux_command_rspec = 'rspec --format progress --drb --color'
+let g:turbux_command_cucumber = 'cucumber -r features --drb --format pretty --color --strict --no-profile --tags ~@slow --tags ~@wip'
+let g:turbux_command_jasmine = 'guard-jasmine -u http://localhost:8888/jasmine -s none'
